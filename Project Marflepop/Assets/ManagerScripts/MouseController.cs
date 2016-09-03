@@ -43,6 +43,10 @@ public class MouseController : MonoBehaviour {
 				GameObject movementSelectionGO =(GameObject)GameObject.Instantiate(selectionPrefab, new Vector3(hitInfo.point.x, .1f, hitInfo.point.z),	Quaternion.identity);
 				movementSelectionGO.transform.Rotate (270, 0, 180);
 				selectionOb = movementSelectionGO;
+				//Easy movement, should probably be changed at some point
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementManager>().TargetPosition=(new Vector3(hitInfo.point.x, .1f, hitInfo.point.z));
+				
+
 			}
 		}
 
