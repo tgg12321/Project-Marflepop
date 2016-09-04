@@ -2,16 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ManagerScripts\PlayerMovementManager.cs">
     <Files>
-      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="56" Column="11" />
+      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="68" Column="11" />
       <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerStates.cs" Line="4" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="C:\Users\Trent\Desktop\ProjectMarflepop\Project-Marflepop\Project Marflepop\Assets\ManagerScripts\PlayerMovementManager.cs" line="35" column="3" />
-      <RunToCursorBreakpoint file="C:\Users\Trent\Desktop\ProjectMarflepop\Project-Marflepop\Project Marflepop\Assets\ManagerScripts\PlayerMovementManager.cs" line="36" column="3" />
-      <RunToCursorBreakpoint file="C:\Users\Trent\Desktop\ProjectMarflepop\Project-Marflepop\Project Marflepop\Assets\ManagerScripts\PlayerMovementManager.cs" line="51" column="2" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

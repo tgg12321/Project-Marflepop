@@ -6,10 +6,24 @@ public class PlayerMovementManager : MonoBehaviour {
 	
 	public float speed=1f;
 	public Vector3 TargetPosition=new Vector3(0, .1f,0);
+	private Animator animator;
 	private float step;
+	public direction currDirection=direction.N;
+	PlayerState currState=PlayerState.IDLE;
+
 	Dictionary<string, Sprite>spriteDictionary=new Dictionary<string, Sprite>();
 
+	public enum direction{
+		S=0, SW=1, 
+		W=2, NW=3, 
+		N=4, NE=5,
+		E=6, SE=7
+
+	};
+
+
 	void Start(){
+		animator = GetComponent<Animator> ();
 		step = speed * Time.deltaTime;
 		Sprite[] sprites = Resources.LoadAll<Sprite>("SpriteSheets");
 		foreach (Sprite spr in sprites) {
@@ -21,40 +35,45 @@ public class PlayerMovementManager : MonoBehaviour {
 	void Update(){
 		updateSprite (TargetPosition);
 		moveTowards (TargetPosition);
+		runPlayerAnimation (currDirection, currState);
 	}
 	public void moveTowards(Vector3 position){
-		if(transform.position!=position){
+		if (transform.position != position) {
 			transform.position = Vector3.MoveTowards (transform.position, position, step);
+			currState = PlayerState.RUNNING;
+		} else {
+			currState = PlayerState.IDLE;
+			animator.SetBool ("Running" , false);
 		}
 	}
 
 	public void updateSprite(Vector3 pos){
 		Sprite spr = GetComponent<SpriteRenderer> ().sprite;
 		if (pos != transform.position) {
-			switch ((int)(vectorToCardinal (pos))) {
-			case 0:
-				spriteDictionary.TryGetValue ("clothes_0_S", out spr);
+			switch (currDirection=(direction)(vectorToCardinal (pos))) {
+			case direction.S:
+				spriteDictionary.TryGetValue ("basicModel_S_idle", out spr);
 				break;
-			case 1:
-				spriteDictionary.TryGetValue ("clothes_0_SW", out spr);
+			case direction.SW:
+				spriteDictionary.TryGetValue ("basicModel_SW_idle", out spr);
 				break;
-			case 2:
-				spriteDictionary.TryGetValue ("clothes_0_W", out spr);
+			case direction.W:
+				spriteDictionary.TryGetValue ("basicModel_W_idle", out spr);
 				break;
-			case 3:
-				spriteDictionary.TryGetValue ("clothes_0_NW", out spr);
+			case direction.NW:
+				spriteDictionary.TryGetValue ("basicModel_NW_idle", out spr);
 				break;
-			case 4:
-				spriteDictionary.TryGetValue ("clothes_0_N", out spr);
+			case direction.N:
+				spriteDictionary.TryGetValue ("basicModel_N_idle", out spr);
 				break;
-			case 5:
-				spriteDictionary.TryGetValue ("clothes_0_NE", out spr);
+			case direction.NE:
+				spriteDictionary.TryGetValue ("basicModel_NE_idle", out spr);
 				break;
-			case 6:
-				spriteDictionary.TryGetValue ("clothes_0_E", out spr);
+			case direction.E:
+				spriteDictionary.TryGetValue ("basicModel_E_idle", out spr);
 				break;
-			case 7:
-				spriteDictionary.TryGetValue ("clothes_0_SE", out spr);
+			case direction.SE:
+				spriteDictionary.TryGetValue ("basicModel_SE_idle", out spr);
 				break;
 			}
 
@@ -69,4 +88,15 @@ public class PlayerMovementManager : MonoBehaviour {
 		return Mathf.Round(8 * angle / (2 * Mathf.PI) + 8) % 8;
 	
 	}
+
+
+	public void runPlayerAnimation(direction dir, PlayerState state){
+		
+		if (state == PlayerState.RUNNING) {
+			animator.SetBool ("Running", true);
+			animator.SetInteger ("Direction", (int)dir);
+		}
+
+	}
+
 }
