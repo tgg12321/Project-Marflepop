@@ -94,7 +94,7 @@ public class PlayerMovementManager : MonoBehaviour {
 		
 		if (state == PlayerState.RUNNING) {
 			animator.SetBool ("Running", true);
-			animator.SetInteger ("Direction", (int)dir);
+			animator.SetFloat("FloatDirection", (float)dir);
 		}
 
 	}

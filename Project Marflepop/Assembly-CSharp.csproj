@@ -47,8 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\ManagerScripts\MouseController.cs" />
      <Compile Include="Assets\ManagerScripts\PlayerMovementManager.cs" />
-     <Compile Include="Assets\PlayerStates.cs" />
      <Compile Include="Assets\UtilityScripts\KillSelfScript.cs" />
+     <Compile Include="Assets\UtilityScripts\PlayerStates.cs" />
      <Compile Include="Assets\UtilityScripts\ShrinkObjectScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
