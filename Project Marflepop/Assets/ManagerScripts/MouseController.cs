@@ -26,7 +26,7 @@ public class MouseController : MonoBehaviour {
 		Vector3 currFramePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		float cameraSize = Camera.main.orthographicSize;
 		// Handle left clicks
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButton(0)) {
 			/*if (!checkOverUIElement()) {
 				return;
 			}
@@ -48,6 +48,7 @@ public class MouseController : MonoBehaviour {
 				
 
 			}
+
 		}
 
 
