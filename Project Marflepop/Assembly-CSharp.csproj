@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\ManagerScripts\MouseController.cs" />
      <Compile Include="Assets\ManagerScripts\PlayerMovementManager.cs" />
+     <Compile Include="Assets\ManagerScripts\SelectionManager.cs" />
      <Compile Include="Assets\UtilityScripts\KillSelfScript.cs" />
      <Compile Include="Assets\UtilityScripts\PlayerStates.cs" />
      <Compile Include="Assets\UtilityScripts\ShrinkObjectScript.cs" />

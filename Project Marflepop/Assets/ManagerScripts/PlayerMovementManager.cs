@@ -25,11 +25,7 @@ public class PlayerMovementManager : MonoBehaviour {
 	void Start(){
 		animator = GetComponent<Animator> ();
 		step = speed * Time.deltaTime;
-		Sprite[] sprites = Resources.LoadAll<Sprite>("SpriteSheets");
-		foreach (Sprite spr in sprites) {
-			spriteDictionary.Add (spr.name, spr);
-		}
-
+	
 
 	}
 	void Update(){
@@ -42,43 +38,19 @@ public class PlayerMovementManager : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, position, step);
 			currState = PlayerState.RUNNING;
 		} else {
+			
 			currState = PlayerState.IDLE;
 			animator.SetBool ("Running" , false);
 		}
 	}
 
 	public void updateSprite(Vector3 pos){
-		Sprite spr = GetComponent<SpriteRenderer> ().sprite;
-		if (pos != transform.position) {
-			switch (currDirection=(direction)(vectorToCardinal (pos))) {
-			case direction.S:
-				spriteDictionary.TryGetValue ("basicModel_S_idle", out spr);
-				break;
-			case direction.SW:
-				spriteDictionary.TryGetValue ("basicModel_SW_idle", out spr);
-				break;
-			case direction.W:
-				spriteDictionary.TryGetValue ("basicModel_W_idle", out spr);
-				break;
-			case direction.NW:
-				spriteDictionary.TryGetValue ("basicModel_NW_idle", out spr);
-				break;
-			case direction.N:
-				spriteDictionary.TryGetValue ("basicModel_N_idle", out spr);
-				break;
-			case direction.NE:
-				spriteDictionary.TryGetValue ("basicModel_NE_idle", out spr);
-				break;
-			case direction.E:
-				spriteDictionary.TryGetValue ("basicModel_E_idle", out spr);
-				break;
-			case direction.SE:
-				spriteDictionary.TryGetValue ("basicModel_SE_idle", out spr);
-				break;
-			}
 
-			this.gameObject.GetComponent<SpriteRenderer> ().sprite = spr;
+		if (pos != transform.position) {
+			currDirection = (direction)(vectorToCardinal (pos));
 		}
+
+		
 
 	}
 
