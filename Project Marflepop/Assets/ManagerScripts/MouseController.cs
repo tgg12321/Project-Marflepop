@@ -27,7 +27,7 @@ public class MouseController : MonoBehaviour {
 		Vector3 currFramePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		float cameraSize = Camera.main.orthographicSize;
 		// Handle left clicks
-		if (Input.GetMouseButton(1)) {
+		if (Input.GetMouseButtonDown(1)) {
 			/*if (!checkOverUIElement()) {
 				return;
 			}
@@ -36,17 +36,23 @@ public class MouseController : MonoBehaviour {
 
 
 			if (Physics.Raycast (ray, out hitInfo)) {
-				//Where the click is located
 				if (selectionCircleGO != null) {
 					GameObject.Destroy (selectionCircleGO);
 
 				}
-				GameObject movementSelectionGO =(GameObject)GameObject.Instantiate(selectionPrefab, new Vector3(hitInfo.point.x, .1f, hitInfo.point.z),	Quaternion.identity);
-				movementSelectionGO.transform.Rotate (300, 0, 180);
-				selectionCircleGO = movementSelectionGO;
-				//Easy movement, should probably be changed at some point
-				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementManager>().TargetPosition=(new Vector3(hitInfo.point.x, .1f, hitInfo.point.z));
-				
+
+				if (hitInfo.transform.gameObject.name == "Enemy_Zombie_Prefab") {
+					Debug.Log ("Zombie hit!!");
+
+				} else {
+
+			
+					GameObject movementSelectionGO = (GameObject)GameObject.Instantiate (selectionPrefab, new Vector3 (hitInfo.point.x, .1f, hitInfo.point.z),	Quaternion.identity);
+					movementSelectionGO.transform.Rotate (300, 0, 180);
+					selectionCircleGO = movementSelectionGO;
+					//Easy movement, should probably be changed at some point
+					GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovementManager> ().TargetPosition = (new Vector3 (hitInfo.point.x, .1f, hitInfo.point.z));
+				}
 
 			}
 
