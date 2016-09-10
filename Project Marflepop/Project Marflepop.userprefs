@@ -3,8 +3,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ManagerScripts\PlayerMovementManager.cs">
     <Files>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
       <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="18" Column="13" />
+=======
+      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="68" Column="11" />
+      <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerStates.cs" Line="1" Column="1" />
+>>>>>>> parent of 2444348... Added mouse dragging
 =======
       <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="68" Column="11" />
       <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
