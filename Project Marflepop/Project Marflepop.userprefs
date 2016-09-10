@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enemy_Zombie_Controller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ManagerScripts\PlayerMovementManager.cs">
     <Files>
-      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="1" Column="1" />
       <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enemy_Zombie_Controller.cs" Line="8" Column="1" />
+      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="18" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
