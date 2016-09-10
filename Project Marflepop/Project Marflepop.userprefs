@@ -2,8 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ManagerScripts\PlayerMovementManager.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
       <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="18" Column="13" />
+=======
+      <File FileName="Assets\ManagerScripts\PlayerMovementManager.cs" Line="68" Column="11" />
+      <File FileName="Assets\ManagerScripts\MouseController.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerStates.cs" Line="1" Column="1" />
+>>>>>>> parent of 2444348... Added mouse dragging
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -27,7 +27,11 @@ public class MouseController : MonoBehaviour {
 		Vector3 currFramePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		float cameraSize = Camera.main.orthographicSize;
 		// Handle left clicks
+<<<<<<< HEAD
 		if (Input.GetMouseButtonDown(1)) {
+=======
+		if (Input.GetMouseButtonDown (0)) {
+>>>>>>> parent of 2444348... Added mouse dragging
 			/*if (!checkOverUIElement()) {
 				return;
 			}
@@ -55,7 +59,6 @@ public class MouseController : MonoBehaviour {
 				}
 
 			}
-
 		}
 		if (Input.GetMouseButtonDown (0)) {
 			Ray ray= Camera.main.ScreenPointToRay (Input.mousePosition);
