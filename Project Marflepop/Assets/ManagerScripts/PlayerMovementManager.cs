@@ -11,7 +11,6 @@ public class PlayerMovementManager : MonoBehaviour {
 	public direction currDirection=direction.N;
 	PlayerState currState=PlayerState.IDLE;
 
-	Dictionary<string, Sprite>spriteDictionary=new Dictionary<string, Sprite>();
 
 	public enum direction{
 		S=0, SW=1, 
@@ -25,7 +24,6 @@ public class PlayerMovementManager : MonoBehaviour {
 	void Start(){
 		animator = GetComponent<Animator> ();
 		step = speed * Time.deltaTime;
-	
 
 	}
 	void Update(){
